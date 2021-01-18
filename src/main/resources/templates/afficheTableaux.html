@@ -5,14 +5,15 @@
     <title>Liste des tableaux</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
 </head>
 <body>
     <h1>Les tableaux et leurs informations</h1>
     <!-- On appelle l'URL 'add' du contrôleur -->
     <a th:href="@{add}" href="formulaireTableau.html">Ajouter un tableau</a>
     <!-- On affiche un éventuel message d'erreur -->
-    <h3 th:text="${message}">Message de succès ou d'erreur</h3>
+    <!-- <h3 th:text="${message}">Message de succès ou d'erreur</h3>-->
     <table>
         <tr>
             <th>Titre</th>
@@ -27,7 +28,7 @@
             <td th:text="${t.support}"></td>
             <td th:text="${t.dimension}"></td>
             <td th:text="${t.auteur}"></td>
-            <td th:href="@{delete(id=${t.id})}">Supprimer le tableau</td>
+            <td><a th:href="@{delete(id=${t.id})}">Supprimer le tableau</a></td>
         </tr>
     </table>
     <hr/>
