@@ -11,6 +11,5 @@ import java.util.Collection;
 public interface ArtisteRepository extends JpaRepository<Artiste, Integer> {
     @Query(value = "SELECT * FROM PERSONNE WHERE DTYPE = 'Artiste'",
             nativeQuery = true)
-    Collection<Artiste> findDistinctAllAuteur();
+    Collection<Artiste> findAllAuteur();
 }
-//SELECT DISTINCT Personne.id, Personne.nom, Personne.biographie FROM Personne INNER JOIN Tableau ON (Tableau.auteur_id = Personne.id)

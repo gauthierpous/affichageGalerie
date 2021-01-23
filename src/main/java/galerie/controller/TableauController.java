@@ -47,7 +47,7 @@ public class TableauController {
      */
     @GetMapping(path = "add")
     public String montreLeFormulairePourAjout(@ModelAttribute("tableau") Tableau tableau, Model model){
-        model.addAttribute("auteurs", artisteDAO.findDistinctAllAuteur());
+        model.addAttribute("auteurs", artisteDAO.findAllAuteur());
         return "formulaireTableau";
     }
 
