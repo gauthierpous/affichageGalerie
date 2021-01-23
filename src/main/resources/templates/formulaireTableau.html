@@ -22,7 +22,14 @@
             <input id="dimension" type="text" th:field="*{dimension}" placeholder="Hauteur x Largeur" required="required">
 
             <label for="auteur">Auteur</label>
-            <input id="auteur" type="text" th:field="*{auteur}" placeholder="Auteur du tableau">
+            <!--<input id="auteur" type="text" th:field="*{auteur}" placeholder="Auteur du tableau">-->
+
+            <select th:field="*{auteur}" id="auteur">
+                <option value="0">Pas d'auteur</option>
+                <option th:each="a : ${auteurs}"
+                        th:value="${a.id}"
+                        th:text="${a.nom}"/>
+            </select>
 
             <input type="submit" value="Enregistrer" />
             <input type="reset" value="Réinitialiser" />
